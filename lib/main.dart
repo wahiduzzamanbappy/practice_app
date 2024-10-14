@@ -1,38 +1,59 @@
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(Helloapp());
+  runApp(const DemoApp());
 }
 
-class Helloapp extends StatelessWidget {
+class DemoApp extends StatelessWidget {
+  const DemoApp({super.key});
+
+  MySnackBar(message, context) {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Hello App',
+      title: 'Demo App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Home'),
-          centerTitle: true,
+          title: const Text(
+            'AppBar',
+            style: TextStyle(color: Colors.white),
+          ),
+          titleSpacing: 50,
+          //centerTitle: true,
           backgroundColor: Colors.blue,
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'New Model',
-              style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.blue),
+          elevation: 10,
+          toolbarOpacity: 1,
+          actions: [
+            IconButton(
+              onPressed: () {
+                MySnackBar('This is add Button', context);
+              },
+              icon: const Icon(Icons.add, color: Colors.white),
             ),
-            Image.network(
-              "https://contents.mediadecathlon.com/p2393865/59e9499e49d170903fb3c71ddaf67c3a/p2393865.jpg?format=auto&quality=70&f=2520x0",
-              width: 300,
-              height: 300,
-              fit: BoxFit.cover,
-            )
+            IconButton(
+              onPressed: () {
+                MySnackBar('This is search Button', context);
+              },
+              icon: const Icon(Icons.search, color: Colors.white),
+            ),
+            IconButton(
+              onPressed: () {
+                MySnackBar('This is settings Button', context);
+              },
+              icon: const Icon(Icons.settings, color: Colors.white),
+            ),
+            IconButton(
+              onPressed: () {
+                MySnackBar('This is comments Button', context);
+              },
+              icon: const Icon(Icons.pending_rounded, color: Colors.white),
+            ),
           ],
         ),
       ),
