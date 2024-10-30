@@ -8,14 +8,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "MyApp",
       home: Text('Home'),
-    );
-  }
 }
 
 class Home extends StatelessWidget {
@@ -51,13 +50,6 @@ class Home extends StatelessWidget {
                 );
               },
               child: const Text('Go to Settings'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
