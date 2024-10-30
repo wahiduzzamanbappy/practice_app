@@ -8,20 +8,24 @@ void main() {
 class TravelerApp extends StatelessWidget {
   const TravelerApp({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+
       title: 'Travel App',
       home: Home(),
     );
   }
+
 }
 
 class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
+
   State<Home> createState() => _HomeState();
 }
 
