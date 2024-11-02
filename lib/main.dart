@@ -15,11 +15,12 @@ class TravelerApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       title: 'Travel App',
-      home: Home(),
+      //home: Home(),
     );
   }
 
 }
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
